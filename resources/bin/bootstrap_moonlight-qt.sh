@@ -115,6 +115,11 @@ if [ -d "$ADDON_BIN_PATH/kodi_hooks/$PLATFORM_DISTRO" ]; then
   source "$ADDON_BIN_PATH/kodi_hooks/$PLATFORM_DISTRO/start.sh"
 fi
 
+# TODO where would I put these?
+export ANV_VIDEO_DECODE=1
+export SDL_AUDIODRIVER=alsa
+export QT_QPA_EGLFS_KMS_CONFIG=/etc/moonlight/eglfs.json
+
 # Start moonlight-qt and log to log file
 echo "--- Starting Moonlight ---"
 ./moonlight-qt "$@"

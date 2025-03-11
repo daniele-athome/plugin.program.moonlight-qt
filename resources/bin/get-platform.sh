@@ -8,7 +8,7 @@ set -e
 
 cd "$(dirname "$0")"
 
-for file in /etc/os-release /usr/lib/os-release; do
+for file in /etc/moonlight/kodi-addon /etc/os-release /usr/lib/os-release; do
   if [ -f $file ]; then
     source $file
     break
@@ -36,6 +36,10 @@ fi
 # Figure out distro (libreelec, ubuntu)
 PLATFORM_DISTRO="$ID"
 PLATFORM_DISTRO_RELEASE="$VERSION_ID"
+
+if [ "$PLATFORM_DISTRO" == "custom" ]; then
+  PLATFORM="custom"
+fi
 
 if [ -d "../build/$PLATFORM" ]; then
   echo "Platform $PLATFORM ($PLATFORM_ARCH) running $PLATFORM_DISTRO $PLATFORM_DISTRO_RELEASE detected..."

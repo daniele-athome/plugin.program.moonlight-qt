@@ -1,1 +1,1 @@
-sudo systemctl stop kodi.service
+systemctl stop kodi.service

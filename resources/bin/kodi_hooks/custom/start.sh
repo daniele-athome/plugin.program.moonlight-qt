@@ -1,1 +1,1 @@
-trap "sudo systemctl start kodi.service" EXIT
+trap "systemctl start kodi.service" EXIT
